@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack-dev-server --port 3000"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +14,10 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-dropzone": "^3.13.1",
+    "react-webcam": "0.0.14",
     "sha1": "^1.1.1",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "webpack-dev-server": "^2.4.5"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

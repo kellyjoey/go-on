@@ -4,6 +4,9 @@ import Dropzone from 'react-dropzone'
 //superagent will make our http requests (it's just an alternative to axios)
 import superagent from 'superagent'
 
+
+
+
 class Images extends Component {
 
     constructor() {
@@ -90,6 +93,7 @@ class Images extends Component {
             <div>
                 Images Component
                 {/*dropzone takes a property called onDrop, which function callback that will be triggered when something is dropped into the dropzone*/}
+                
                 <Dropzone onDrop={this.uploadFile.bind(this)}/>
                 <ol>
                     { list }
@@ -98,5 +102,4 @@ class Images extends Component {
         )
     }
 }
-
 export default Images
