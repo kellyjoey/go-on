@@ -90,15 +90,18 @@ class Images extends Component {
             )
         })
         return(
-            <div>
+        <div className="row">
+            <div className="col-xs-12 center-block">
                 Images Component
                 {/*dropzone takes a property called onDrop, which function callback that will be triggered when something is dropped into the dropzone*/}
                 
                 <Dropzone onDrop={this.uploadFile.bind(this)}/>
+                
                 <ol>
                     { list }
                 </ol>
             </div>
+        </div>
         )
     }
 }

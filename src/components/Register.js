@@ -11,7 +11,7 @@ class Register extends Component {
 
     render(){
         return (
-          <div id="Register">
+          <div id="Register" className="container">
             <h2 className="page-header">Register</h2>
                 {/*// {{#if errors}}
 	            //     {{#each errors}}

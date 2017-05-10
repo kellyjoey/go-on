@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Login extends Component {
     render(){
         return(
-            <div id="Login">
+            <div id="Login" className="container">
             <h2 className="page-header">Account Login</h2>
                 <form onSubmit={this.doLogin.bind(this)}>
 	                <div className="form-group">
