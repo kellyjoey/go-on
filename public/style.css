@@ -1,0 +1,18 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: -webkit-gradient(linear, left top, right bottom, from(aqua), to(purple));
+    background-image: -webkit-linear-gradient(top, white, end-color);
+    background-image: -moz-linear-gradient(top, purple, end-color);
+    background-image: linear-gradient(to bottom, purple, end-color);
+}
+
+video, img {
+    width: 620px;
+    border: 30px solid white;
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" ><defs><linearGradient id="lgrad" x1="0%" y1="100%" x2="100%" y2="0%" ><stop offset="0%" style="stop-color:rgb(255,0,255);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(0,255,255);stop-opacity:1" /></linearGradient> </defs><rect x="0" y="0" width="100%" height="100%" fill="url(#lgrad)"/></svg>') 10% stretch;
+    padding: 0;
+    margin: 0;
+}

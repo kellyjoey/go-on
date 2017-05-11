@@ -14,10 +14,11 @@ import React, { Component } from 'react'
 
     render() {
         return (
-        <div>
-        <Webcam audio={false} ref="webcam"/>
-        <button onClick={this.screenshot.bind(this)}>Capture</button>
-        { this.state.screenshot ? <img src={this.state.screenshot} /> : null }
+        <div className="col-xs-12">
+        <Webcam className="center-block" audio={false} ref="webcam"/>
+        <br/>
+        <button className="center-block" onClick={this.screenshot.bind(this)}>Capture</button>
+        { this.state.screenshot ? <img className="center-block" src={this.state.screenshot} /> : null }
         </div>
         )
     }
