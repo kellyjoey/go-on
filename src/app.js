@@ -4,16 +4,17 @@ import Images from './components/Images'
 import WebcamComponent from './components/Webcam'
 import Register from './components/Register'
 import Login from './components/Login'
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 class Mobile extends Component {
 
     render() {
         return (
             <div>
-                Here is your Mission:  (mission goes here)
-                
-                
-                <WebcamComponent />
+                <h1>Mobile</h1>
+                <form method="POST" action="/upload">
+                    <input type="file" name='pic' capture="capture" accept="image/*" />
+                </form>
                 <Register />
                 <Login />
             </div>
@@ -35,9 +36,13 @@ class Desktop extends Component {
     }
 }
 
-                
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    ReactDOM.render(<Mobile />, document.getElementById('root'))
-}else{
-    ReactDOM.render(<Desktop />, document.getElementById('root'))
-}
+const Routes = (props) => (
+  <Router {...props}>
+    <Route exact path="/" component={Desktop} />
+  </Router>
+);
+
+ReactDOM.render(
+  <Routes />,
+  document.getElementById('root')
+);
