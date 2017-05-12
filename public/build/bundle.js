@@ -11259,7 +11259,7 @@ exports.default = Login;
 
 
 Object.defineProperty(exports, "__esModule", {
-               value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -11277,116 +11277,116 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Register = function (_Component) {
-               _inherits(Register, _Component);
+    _inherits(Register, _Component);
 
-               function Register() {
-                              _classCallCheck(this, Register);
+    function Register() {
+        _classCallCheck(this, Register);
 
-                              return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
-               }
+        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+    }
 
-               _createClass(Register, [{
-                              key: "render",
+    _createClass(Register, [{
+        key: "render",
 
 
-                              // constructor(props) {
-                              //     super(props)
-                              //     this.state = {
-                              //         users: props.users
-                              //     }
-                              // }
+        // constructor(props) {
+        //     super(props)
+        //     this.state = {
+        //         users: props.users
+        //     }
+        // }
 
-                              value: function render() {
-                                             return _react2.default.createElement(
-                                                            "div",
-                                                            { id: "Register", className: "container" },
-                                                            _react2.default.createElement(
-                                                                           "h2",
-                                                                           { className: "page-header" },
-                                                                           "Register"
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                           "form",
-                                                                           { onSubmit: this.addRegister.bind(this) },
-                                                                           _react2.default.createElement(
-                                                                                          "div",
-                                                                                          { className: "form-group" },
-                                                                                          _react2.default.createElement(
-                                                                                                         "label",
-                                                                                                         null,
-                                                                                                         "Name"
-                                                                                          ),
-                                                                                          _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Name",
-                                                                                                         ref: "name" })
-                                                                           ),
-                                                                           _react2.default.createElement(
-                                                                                          "div",
-                                                                                          { className: "form-group" },
-                                                                                          _react2.default.createElement(
-                                                                                                         "label",
-                                                                                                         null,
-                                                                                                         "Username"
-                                                                                          ),
-                                                                                          _react2.default.createElement("input", { type: "text", className: "form-control",
-                                                                                                         placeholder: "Username", ref: "username" })
-                                                                           ),
-                                                                           _react2.default.createElement(
-                                                                                          "div",
-                                                                                          { className: "form-group" },
-                                                                                          _react2.default.createElement(
-                                                                                                         "label",
-                                                                                                         null,
-                                                                                                         "Email"
-                                                                                          ),
-                                                                                          _react2.default.createElement("input", { type: "email", className: "form-control",
-                                                                                                         placeholder: "Email", ref: "email" })
-                                                                           ),
-                                                                           _react2.default.createElement(
-                                                                                          "div",
-                                                                                          { className: "form-group" },
-                                                                                          _react2.default.createElement(
-                                                                                                         "label",
-                                                                                                         null,
-                                                                                                         "Password"
-                                                                                          ),
-                                                                                          _react2.default.createElement("input", { type: "password", className: "form-control",
-                                                                                                         placeholder: "Password", ref: "password" })
-                                                                           ),
-                                                                           _react2.default.createElement(
-                                                                                          "div",
-                                                                                          { className: "form-group" },
-                                                                                          _react2.default.createElement(
-                                                                                                         "label",
-                                                                                                         null,
-                                                                                                         "Confirm Password"
-                                                                                          ),
-                                                                                          _react2.default.createElement("input", { type: "password", className: "form-control",
-                                                                                                         placeholder: "Password", ref: "password2" })
-                                                                           ),
-                                                                           _react2.default.createElement(
-                                                                                          "button",
-                                                                                          { type: "submit", className: "btn btn-default" },
-                                                                                          "Submit"
-                                                                           )
-                                                            )
-                                             );
-                              }
-               }, {
-                              key: "addRegister",
-                              value: function addRegister(event) {
-                                             event.preventDefault();
-                                             //grabbing the submitted data
-                                             console.log(this.refs.name.value);
-                                             var name = this.refs.name.value;
-                                             var phone = this.refs.username.value;
-                                             var email = this.refs.email.value;
-                                             var password = this.refs.password.value;
-                                             //clear out the input boxes
-                                             this.refs.name.value = '';
-                              }
-               }]);
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { id: "Register", className: "container" },
+                _react2.default.createElement(
+                    "h2",
+                    { className: "page-header" },
+                    "Register"
+                ),
+                _react2.default.createElement(
+                    "form",
+                    { onSubmit: this.addRegister.bind(this) },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Name"
+                        ),
+                        _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Name",
+                            ref: "name" })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Username"
+                        ),
+                        _react2.default.createElement("input", { type: "text", className: "form-control",
+                            placeholder: "Username", ref: "username" })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Email"
+                        ),
+                        _react2.default.createElement("input", { type: "email", className: "form-control",
+                            placeholder: "Email", ref: "email" })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Password"
+                        ),
+                        _react2.default.createElement("input", { type: "password", className: "form-control",
+                            placeholder: "Password", ref: "password" })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Confirm Password"
+                        ),
+                        _react2.default.createElement("input", { type: "password", className: "form-control",
+                            placeholder: "Password", ref: "password2" })
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { type: "submit", className: "btn btn-default" },
+                        "Submit"
+                    )
+                )
+            );
+        }
+    }, {
+        key: "addRegister",
+        value: function addRegister(event) {
+            event.preventDefault();
+            //grabbing the submitted data
+            console.log(this.refs.name.value);
+            var name = this.refs.name.value;
+            var phone = this.refs.username.value;
+            var email = this.refs.email.value;
+            var password = this.refs.password.value;
+            //clear out the input boxes
+            this.refs.name.value = '';
+        }
+    }]);
 
-               return Register;
+    return Register;
 }(_react.Component);
 
 exports.default = Register;
@@ -11444,14 +11444,25 @@ var WebcamComponent = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'col-xs-12' },
-                _react2.default.createElement(_reactWebcam2.default, { className: 'center-block', audio: false, ref: 'webcam' }),
+                _react2.default.createElement(_reactWebcam2.default, { className: 'center-block currentVid', audio: false, ref: 'webcam', screenshotFormat: 'image/png' }),
                 _react2.default.createElement('br', null),
                 _react2.default.createElement(
                     'button',
                     { className: 'center-block', onClick: this.screenshot.bind(this) },
                     'Capture'
                 ),
-                this.state.screenshot ? _react2.default.createElement('img', { className: 'center-block', src: this.state.screenshot }) : null
+                this.state.screenshot ? _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement('img', { className: 'center-block currentScreenshot', src: this.state.screenshot }),
+                    ' ',
+                    _react2.default.createElement(
+                        'button',
+                        { className: 'uploadButton center-block', 'data-image': this.state.screenshot },
+                        'Upload!'
+                    ),
+                    ' '
+                ) : null
             );
         }
     }]);

@@ -15,10 +15,11 @@ import React, { Component } from 'react'
     render() {
         return (
         <div className="col-xs-12">
-        <Webcam className="center-block" audio={false} ref="webcam"/>
+        <Webcam className="center-block currentVid" audio={false} ref="webcam" screenshotFormat="image/png" />
         <br/>
         <button className="center-block" onClick={this.screenshot.bind(this)}>Capture</button>
-        { this.state.screenshot ? <img className="center-block" src={this.state.screenshot} /> : null }
+        { this.state.screenshot ? <div><img className="center-block currentScreenshot" src={this.state.screenshot} /> <button className="uploadButton center-block" data-image={this.state.screenshot}>Upload!</button> </div>: null }
+        
         </div>
         )
     }
