@@ -22,8 +22,12 @@ cloudinary.config({
 
 
 app.post("/upload", function(req, res){
+  let text= "#SomeText";
 
-  cloudinary.v2.uploader.upload(req.body.image, {background: "#f26565", color: "#eec9c9", gravity: "south_west", height: 65, overlay: "logowhite_fxvw6l", radius: 16, x: 0, y: 0, crop: "fill"}, function(error, result){
+  cloudinary.v2.uploader.upload(req.body.image, {transformation: [
+  {width: 400, crop: "scale"},
+  {overlay: "text:helvetica_15_bold:"+ text +"", gravity: "south_east",x: 12, y: 12, color: "#fff", opacity: 80}
+  , {background: "#f26565", color: "#eec9c9", gravity: "south_west", height: 50, overlay: "logowhite_fxvw6l", radius: 16, x: 0, y: 0, crop: "fill"}]}, function(error, result){
     console.log(result);
   });
 });
