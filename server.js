@@ -1,6 +1,10 @@
+const config = require('./config');
 const express = require('express');
-
+const passport = require('passport');
 const path = require('path');
+
+// connect to the database and load models
+require('./models').connect(config.goUserDB);
 
 const app = express();
 
@@ -8,6 +12,10 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }))
 app.use(bodyParser.json({limit: '50mb'}))
+
+
+// connect to the database and load models
+require('./models').connect(config.goUserDB);
 
 
 const cloudinary = require('cloudinary');
