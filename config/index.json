@@ -1,0 +1,4 @@
+{
+  "goUserDB": "mongodb://localhost/goUserDB",
+  "jwtSecret": "secret"
+}
