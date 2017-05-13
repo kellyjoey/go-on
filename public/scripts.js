@@ -5,3 +5,7 @@ $("body").on('click', '.uploadButton', function(){
         console.log(data);
     });
 });
+
+// $.get('/piclist', function(data){
+//     console.log(data);
+// })

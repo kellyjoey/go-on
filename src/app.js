@@ -38,8 +38,13 @@ class Desktop extends Component {
 
 const Routes = (props) => (
   <Router {...props}>
-    <Route exact path="/" component={Desktop} />
-  </Router>
+      <div>
+        <Route exact path="/" component={Desktop} />
+        <Route path="/uploads" component={Mobile} />
+    </div>
+  </Router>  
+      
+
 );
 
 ReactDOM.render(

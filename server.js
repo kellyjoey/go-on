@@ -3,8 +3,8 @@ const express = require('express');
 const passport = require('passport');
 const path = require('path');
 
-// connect to the database and load models
-require('./models').connect(config.goUserDB);
+// // connect to the database and load models
+// require('./models').connect(config.goUserDB);
 
 const app = express();
 
@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true }))
 app.use(bodyParser.json({limit: '50mb'}))
 
 
-// connect to the database and load models
-require('./models').connect(config.goUserDB);
+// // connect to the database and load models
+// require('./models').connect(config.goUserDB);
 
 
 const cloudinary = require('cloudinary');
@@ -26,8 +26,14 @@ cloudinary.config({
   api_secret: 'EH2_iF_FqXGA3e_J1RKQFEOQwtc' 
 });
 
-// Setup logger
 
+app.get("/piclist", function(req, res){
+  cloudinary.api.resources(function(result){
+    console.log(result)
+    res.send("success");
+  },{ type: 'upload'});
+
+})
 
 app.post("/upload", function(req, res){
   let text= "#SomeText";
