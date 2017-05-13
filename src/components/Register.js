@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+//superagent will make our http requests (it's just an alternative to axios)
+import superagent from 'superagent'
 
 class Register extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         users: props.users
-    //     }
-    // }
+    constructor(props) {
+        super(props)
+        this.state = {
+            users: props.users
+        }
+    }
 
     render(){
         return (
@@ -54,14 +56,35 @@ class Register extends Component {
         event.preventDefault();
         //grabbing the submitted data
         console.log(this.refs.name.value);
-        let name = this.refs.name.value;
-        let phone = this.refs.username.value;
-        let email = this.refs.email.value;
-        let password = this.refs.password.value;
+        const params = {
+            'name': this.refs.name.value,
+            'username': this.refs.username.value,
+            'email': this.refs.email.value,
+            'password': this.refs.password.value,
+        }
         //clear out the input boxes
         this.refs.name.value = '';
+
+        //prepare request for superagent
+        let signupRequest = superagent.post('/users/register')
+
+         Object.keys(params).forEach((key) => {
+            signupRequest.field(key, params[key])
+        })
+        console.log("signupRequest:")
+        console.log(signupRequest)
+
+        signupRequest.end((err, resp) => {
+            if (err){
+                alert(err, null)
+                return
+            }
+            //superagent gives the response, this will help us identify what data we get from mongo if the post was successful
+            console.log('POST COMPLETE: ' + JSON.stringify(resp.body))
+            })
         
     }
+
 }
 
 export default Register;
