@@ -12318,32 +12318,33 @@ var Register = function (_Component) {
             event.preventDefault();
             //grabbing the submitted data
             console.log(this.refs.name.value);
-            var params = {
+            // const params = {
+            //     'name': this.refs.name.value,
+            //     'username': this.refs.username.value,
+            //     'email': this.refs.email.value,
+            //     'password': this.refs.password.value,
+            // }
+            //clear out the input boxes
+            // this.refs.name.value = '';
+
+            //prepare request for superagent
+            var signupRequest = _superagent2.default.post('/register');
+            // console.log("signupRequest:")
+            // console.log(signupRequest)
+
+            signupRequest.end({
                 'name': this.refs.name.value,
                 'username': this.refs.username.value,
                 'email': this.refs.email.value,
-                'password': this.refs.password.value
-            };
-            //clear out the input boxes
-            this.refs.name.value = '';
-
-            //prepare request for superagent
-            var signupRequest = _superagent2.default.post('/users/register');
-
-            Object.keys(params).forEach(function (key) {
-                signupRequest.field(key, params[key]);
+                'password': this.refs.password.value,
+                'password2': this.refs.password2.value
             });
-            console.log("signupRequest:");
-            console.log(signupRequest);
 
-            signupRequest.end(function (err, resp) {
-                if (err) {
-                    alert(err, null);
-                    return;
-                }
-                //superagent gives the response, this will help us identify what data we get from mongo if the post was successful
-                console.log('POST COMPLETE: ' + JSON.stringify(resp.body));
-            });
+            // signupRequest.end((err, resp) => {
+            //     if (err){
+            //         alert(err, null)
+            //     }
+            // })
         }
     }]);
 

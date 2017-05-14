@@ -2,6 +2,7 @@ const config = require('./config');
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
+const User = require('./models/user');
 
 // connect to the database and load models
 require('./models').connect(config.goUserDB);
@@ -12,10 +13,6 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }))
 app.use(bodyParser.json({limit: '50mb'}))
-
-
-// connect to the database and load models
-require('./models').connect(config.goUserDB);
 
 
 const cloudinary = require('cloudinary');
@@ -38,6 +35,35 @@ app.post("/upload", function(req, res){
   , {background: "#f26565", color: "#eec9c9", gravity: "south_west", height: 50, overlay: "logowhite_fxvw6l", radius: 16, x: 0, y: 0, crop: "fill"}]}, function(error, result){
     console.log(result);
   });
+});
+
+//Register User
+app.post('/register', (req, res) => {
+  console.log("you've made it to router.post in server.js");
+  let name = req.body.name;
+	let email = req.body.email;
+	let username = req.body.username;
+	let password = req.body.password;
+	let password2 = req.body.password2;
+  // console.log("this is your request req.body");
+	// console.log(req.body);
+
+		var newUser = new User({
+			name: name,
+			email: email,
+			username: username,
+			password: password
+		});
+
+		User.createUser(newUser, function(err, user){
+			if (err) throw err;
+			console.log(user);
+		});
+
+	// 	req.flash('success_msg', 'You are registered and can now login');
+
+	// 	res.redirect('/users/login');
+	// }
 });
 
 // Serve static assets
