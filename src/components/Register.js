@@ -77,7 +77,6 @@ class Register extends Component {
             'password': this.refs.password.value,
             'password2': this.refs.password2.value 
         })
-        
 
         signupRequest.end((err, resp) => {
             if (err){

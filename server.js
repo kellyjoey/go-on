@@ -1,6 +1,8 @@
 const config = require('./config');
 const express = require('express');
+const session = require('express-session');
 const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const path = require('path');
 const User = require('./models/user');
 
@@ -13,6 +15,22 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true }))
 app.use(bodyParser.json({limit: '50mb'}))
+
+// Serve static assets
+app.use(express.static(path.join(__dirname, 'public')))
+
+// Always return the main index.html, so react-router render the route in the client
+
+//Express Session
+app.use(session({
+	secret: 'secret',
+	saveUninitialized: true,
+	resave: true
+}));
+
+//Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 const cloudinary = require('cloudinary');
@@ -66,10 +84,45 @@ app.post('/register', (req, res) => {
 	// }
 });
 
-// Serve static assets
-app.use(express.static(path.join(__dirname, 'public')))
 
-// Always return the main index.html, so react-router render the route in the client
+passport.use(new LocalStrategy(
+	function(username, password, done){
+		User.getUserByUsername(username, function(err, user){
+			if (err) throw err;
+			if(!user){
+				return done(null, false, { message: 'Unknown user' });
+			}
+
+			User.comparePassword(password, user.password, function(err, isMatch){
+				if (err) throw err;
+				if (isMatch){
+					return done(null, user);
+				} else {
+					return done(null, false, { message: 'Invalid passoword' });
+				}
+			});
+		});
+	}));
+
+	passport.serializeUser(function(user, done){
+		done(null, user.id);
+	});
+
+	passport.deserializeUser(function(id, done){
+		User.getUserById(id, function(err, user){
+			done(err, user);
+		});
+	});
+
+app.post('/login',
+  passport.authenticate('local'),
+  function(req, res){
+  console.log(res);
+  console.log("congratulations");
+	res.redirect('/');
+});
+
+
 
 
 const PORT = process.env.PORT || 9000;
