@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+//superagent will make our http requests (it's just an alternative to axios)
+import superagent from 'superagent'
 
 class Login extends Component {
     render(){
@@ -24,13 +26,21 @@ class Login extends Component {
         
     doLogin(event){
         event.preventDefault();
-        //grabbing the submitted data
+        
         console.log(this.refs.username.value);
-        let username = this.refs.username.value;
-        let password = this.refs.password.value;
-        //clear out the input boxes
-        this.refs.username.value = '';
+      
+        let loginRequest = superagent.post('/login')
+        loginRequest.send({
+            username: this.refs.username.value,
+            password: this.refs.password.value
+        });
+        loginRequest.end((err, resp) => {
+            if (err){
+                alert(err, null)
+            }
+        })
     }
+
 }
 
 export default Login;

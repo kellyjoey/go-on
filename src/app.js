@@ -30,7 +30,7 @@ class Desktop extends Component {
                <h1 className="text-center">Desktop</h1>
                <Images />
                <WebcamComponent />
-               <Register />
+               <Login />
             </div>
         )
     }

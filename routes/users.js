@@ -17,9 +17,9 @@ router.get('/login', function(req, res){
 });
 
 //Register User
-router.post('/register', (req, res) => {
-    console.log("you've made it to router.post in users.js");
-    console.log(req);
+// router.post('/register', (req, res) => {
+//     console.log("you've made it to router.post in users.js");
+//     console.log(req);
 	// var name = req.body.name;
 	// var email = req.body.email;
 	// var username = req.body.username;
@@ -59,7 +59,7 @@ router.post('/register', (req, res) => {
 
 	// 	res.redirect('/users/login');
 	// }
-});
+// });
 
 passport.use(new LocalStrategy(
 	function(username, password, done){
