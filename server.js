@@ -52,6 +52,7 @@ app.post("/upload", function(req, res){
   {overlay: "text:helvetica_15_bold:"+ text +"", gravity: "south_east",x: 12, y: 12, color: "#fff", opacity: 80}
   , {background: "#f26565", color: "#eec9c9", gravity: "south_west", height: 50, overlay: "logowhite_fxvw6l", radius: 16, x: 0, y: 0, crop: "fill"}]}, function(error, result){
     console.log(result);
+		res.send("success");
   });
 });
 
@@ -77,7 +78,7 @@ app.post('/register', (req, res) => {
 			if (err) throw err;
 			console.log(user);
 		});
-
+res.send("success");
 	// 	req.flash('success_msg', 'You are registered and can now login');
 
 	// 	res.redirect('/users/login');
@@ -98,7 +99,7 @@ passport.use(new LocalStrategy(
 				if (isMatch){
 					return done(null, user);
 				} else {
-					return done(null, false, { message: 'Invalid passoword' });
+					return done(null, false, { message: 'Invalid password' });
 				}
 			});
 		});
@@ -120,6 +121,14 @@ app.post('/login',
   console.log(res);
   console.log("congratulations");
 	res.redirect('/');
+});
+
+app.get('/piclist', function(req, res){
+
+	cloudinary.api.resources(function(result){
+	res.send(result);
+
+},{ type: 'upload' });
 });
 
 

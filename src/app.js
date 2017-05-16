@@ -5,6 +5,7 @@ import WebcamComponent from './components/Webcam'
 import Register from './components/Register'
 import Login from './components/Login'
 import { HashRouter as Router, Route } from 'react-router-dom';
+import Gallery from './components/Gallery';
 
 class Mobile extends Component {
 
@@ -31,6 +32,7 @@ class Desktop extends Component {
                <Images />
                <WebcamComponent />
                <Login />
+               <Register />
             </div>
         )
     }
@@ -40,7 +42,7 @@ const Routes = (props) => (
   <Router {...props}>
       <div>
         <Route exact path="/" component={Desktop} />
-        <Route path="/uploads" component={Mobile} />
+        <Route path="/uploads" component={Gallery} />
     </div>
   </Router>  
       
