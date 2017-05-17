@@ -29,10 +29,10 @@ class Desktop extends Component {
         return (
             <div>
                <h1 className="text-center">Desktop</h1>
-               <Images />
+               {/*<Images />*/}
                <WebcamComponent />
-               <Login />
-               <Register />
+               {/*<Login />
+               <Register />*/}
             </div>
         )
     }
@@ -41,8 +41,10 @@ class Desktop extends Component {
 const Routes = (props) => (
   <Router {...props}>
       <div>
-        <Route exact path="/" component={Desktop} />
+        <Route exact path="/" component={Login} />
+        <Route path="/main" component={Desktop} />
         <Route path="/uploads" component={Gallery} />
+        <Route path="/register" component={Register} />
     </div>
   </Router>  
       
