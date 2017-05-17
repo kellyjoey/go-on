@@ -1,4 +1,4 @@
 {
-  "goUserDB": "mongodb://localhost/goUserDB",
+  "goUserDB": "mongodb://heroku_qllx3jfv:h0dim55sg9rovl6cqkvmu5l32o@ds143071.mlab.com:43071/heroku_qllx3jfv",
   "jwtSecret": "secret"
 }
