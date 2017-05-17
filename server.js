@@ -123,6 +123,15 @@ app.post('/login',
 	res.redirect('/');
 });
 
+app.get('/logout', function(req, res){
+  console.log("This is req.user logging out" + req.user);
+
+	req.logOut();
+  console.log("you are logged out");
+
+	res.send("you're logged out dude");
+});
+
 app.get('/piclist', function(req, res){
 
 	cloudinary.api.resources(function(result){
