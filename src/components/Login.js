@@ -20,6 +20,9 @@ class Login extends Component {
 	                </div>
 	                <button type="submit" className="btn btn-default">Submit</button>
                 </form>
+                <form onSubmit={this.doLogout.bind(this)}>
+                    <button type="submit" className="btn btn-default">Logout</button>
+                </form>
             </div>
         )
     }
@@ -36,6 +39,16 @@ class Login extends Component {
         });
         loginRequest.end((err, resp) => {
             if (err){
+                alert(err, null)
+            }
+        })
+    }
+
+    doLogout(event){
+        event.preventDefault();
+        let logoutRequest = superagent.get('/logout')
+        logoutRequest.end((err, resp) => {
+            if (err) {
                 alert(err, null)
             }
         })
