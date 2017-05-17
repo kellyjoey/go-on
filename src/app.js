@@ -29,7 +29,7 @@ class Desktop extends Component {
         return (
             <div>
                <h1 className="text-center">Desktop</h1>
-               {/*<Images />*/}
+               <Images />
                <WebcamComponent />
                {/*<Login />
                <Register />*/}
