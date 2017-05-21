@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 //superagent will make our http requests (it's just an alternative to axios)
 import superagent from 'superagent'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
     render(){
@@ -20,9 +21,10 @@ class Login extends Component {
 	                </div>
 	                <button type="submit" className="btn btn-default">Submit</button>
                 </form>
-                <form onSubmit={this.doLogout.bind(this)}>
+                {/*<form onSubmit={this.doLogout.bind(this)}>
                     <button type="submit" className="btn btn-default">Logout</button>
-                </form>
+                </form>*/}
+                <Link to="/register">New Here? Register an account!</Link>
             </div>
         )
     }

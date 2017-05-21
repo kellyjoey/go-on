@@ -6,15 +6,15 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 
-//Register
-router.get('/register', function(req, res){
-	res.render('register');
-});
+// //Register
+// router.get('/register', function(req, res){
+// 	res.render('register');
+// });
 
-//Login
-router.get('/login', function(req, res){
-	res.render('login');
-});
+// //Login
+// router.get('/login', function(req, res){
+// 	res.render('login');
+// });
 
 //Register User
 // router.post('/register', (req, res) => {
