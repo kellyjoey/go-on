@@ -6,6 +6,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Gallery from './components/Gallery';
+import Navbar from './components/Navbar';
 
 class Mobile extends Component {
 
@@ -41,10 +42,11 @@ class Desktop extends Component {
 const Routes = (props) => (
   <Router {...props}>
       <div>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={Navbar} />
         <Route path="/main" component={Desktop} />
         <Route path="/uploads" component={Gallery} />
         <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
     </div>
   </Router>  
       
