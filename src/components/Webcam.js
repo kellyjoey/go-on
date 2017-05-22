@@ -15,6 +15,9 @@ import React, { Component } from 'react'
     render() {
         return (
         <div className="col-xs-12">
+        <header className ="page-header text-center">
+                <h1 className="heading">Go-On!</h1>
+            </header>
         <Webcam className="center-block currentVid" audio={false} ref="webcam" screenshotFormat="image/png" />
         <br/>
         <button className="center-block" onClick={this.screenshot.bind(this)}>Capture</button>

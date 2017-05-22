@@ -27,7 +27,11 @@ class Gallery extends Component {
     
     render() {
         return (
+        
         <div>
+            <header className ="page-header text-center">
+                <h1 className="heading">Go-On!</h1>
+            </header>
            {this.state.images.map(item=><img src={item.url}></img>)}
         </div>
 

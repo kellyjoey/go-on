@@ -7,24 +7,38 @@ class Login extends Component {
     render(){
         return(
             <div id="Login" className="container">
-            <h2 className="page-header">Account Login</h2>
-                <form onSubmit={this.doLogin.bind(this)}>
-	                <div className="form-group">
-		                <label>Username</label>
-		                <input type= "text" className="form-control"
-		                placeholder="Username" ref="username" />
-	                </div>
-	                <div className="form-group">
-		                <label>Password</label>
-		                <input type="password" className="form-control"
-		                placeholder="Password" ref="password" />
-	                </div>
-	                <button type="submit" className="btn btn-default">Submit</button>
-                </form>
-                {/*<form onSubmit={this.doLogout.bind(this)}>
-                    <button type="submit" className="btn btn-default">Logout</button>
-                </form>*/}
-                <Link to="/register">New Here? Register an account!</Link>
+            <div className="stage">
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>
+                <div className="layer"></div>  
+            </div>
+                <div className="col-md-offset-3 col-md-6">
+                    <h2 className="page-header">Account Login</h2>
+                    <form onSubmit={this.doLogin.bind(this)}>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input type= "text" className="form-control"
+                            placeholder="Username" ref="username" />
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input type="password" className="form-control"
+                            placeholder="Password" ref="password" />
+                        </div>
+                        <button type="submit" className="btn btn-default">Submit</button>
+                    </form>
+                    {/*<form onSubmit={this.doLogout.bind(this)}>
+                        <button type="submit" className="btn btn-default">Logout</button>
+                    </form>*/}
+                    <Link to="/register">New Here? Register an account!</Link>
+                </div>
             </div>
         )
     }

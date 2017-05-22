@@ -12054,6 +12054,15 @@ var Gallery = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(
+                    'header',
+                    { className: 'page-header text-center' },
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'heading' },
+                        'Go-On!'
+                    )
+                ),
                 this.state.images.map(function (item) {
                     return _react2.default.createElement('img', { src: item.url });
                 })
@@ -12275,45 +12284,63 @@ var Login = function (_Component) {
                 'div',
                 { id: 'Login', className: 'container' },
                 _react2.default.createElement(
-                    'h2',
-                    { className: 'page-header' },
-                    'Account Login'
+                    'div',
+                    { className: 'stage' },
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' }),
+                    _react2.default.createElement('div', { className: 'layer' })
                 ),
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: this.doLogin.bind(this) },
+                    'div',
+                    { className: 'col-md-offset-3 col-md-6' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
-                        _react2.default.createElement(
-                            'label',
-                            null,
-                            'Username'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control',
-                            placeholder: 'Username', ref: 'username' })
+                        'h2',
+                        { className: 'page-header' },
+                        'Account Login'
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
+                        'form',
+                        { onSubmit: this.doLogin.bind(this) },
                         _react2.default.createElement(
-                            'label',
-                            null,
-                            'Password'
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Username'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'form-control',
+                                placeholder: 'Username', ref: 'username' })
                         ),
-                        _react2.default.createElement('input', { type: 'password', className: 'form-control',
-                            placeholder: 'Password', ref: 'password' })
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Password'
+                            ),
+                            _react2.default.createElement('input', { type: 'password', className: 'form-control',
+                                placeholder: 'Password', ref: 'password' })
+                        ),
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'submit', className: 'btn btn-default' },
+                            'Submit'
+                        )
                     ),
                     _react2.default.createElement(
-                        'button',
-                        { type: 'submit', className: 'btn btn-default' },
-                        'Submit'
+                        _reactRouterDom.Link,
+                        { to: '/register' },
+                        'New Here? Register an account!'
                     )
-                ),
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/register' },
-                    'New Here? Register an account!'
                 )
             );
         }
@@ -12405,72 +12432,85 @@ var Register = function (_Component) {
                 'div',
                 { id: 'Register', className: 'container' },
                 _react2.default.createElement(
-                    'h2',
-                    { className: 'page-header' },
-                    'Register'
+                    'header',
+                    { className: 'page-header text-center' },
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'heading' },
+                        'Go-On!'
+                    )
                 ),
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: this.addRegister.bind(this) },
+                    'div',
+                    { className: 'col-md-offset-3 col-md-6' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
-                        _react2.default.createElement(
-                            'label',
-                            null,
-                            'Name'
-                        ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Name',
-                            ref: 'name' })
+                        'h2',
+                        { className: 'page-header' },
+                        'Register'
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
+                        'form',
+                        { onSubmit: this.addRegister.bind(this) },
                         _react2.default.createElement(
-                            'label',
-                            null,
-                            'Username'
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Name'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Name',
+                                ref: 'name' })
                         ),
-                        _react2.default.createElement('input', { type: 'text', className: 'form-control',
-                            placeholder: 'Username', ref: 'username' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
                         _react2.default.createElement(
-                            'label',
-                            null,
-                            'Email'
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Username'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'form-control',
+                                placeholder: 'Username', ref: 'username' })
                         ),
-                        _react2.default.createElement('input', { type: 'email', className: 'form-control',
-                            placeholder: 'Email', ref: 'email' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
                         _react2.default.createElement(
-                            'label',
-                            null,
-                            'Password'
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Email'
+                            ),
+                            _react2.default.createElement('input', { type: 'email', className: 'form-control',
+                                placeholder: 'Email', ref: 'email' })
                         ),
-                        _react2.default.createElement('input', { type: 'password', className: 'form-control',
-                            placeholder: 'Password', ref: 'password' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group' },
                         _react2.default.createElement(
-                            'label',
-                            null,
-                            'Confirm Password'
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Password'
+                            ),
+                            _react2.default.createElement('input', { type: 'password', className: 'form-control',
+                                placeholder: 'Password', ref: 'password' })
                         ),
-                        _react2.default.createElement('input', { type: 'password', className: 'form-control',
-                            placeholder: 'Password', ref: 'password2' })
-                    ),
-                    _react2.default.createElement(
-                        'button',
-                        { type: 'submit', className: 'btn btn-default' },
-                        'Submit'
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Confirm Password'
+                            ),
+                            _react2.default.createElement('input', { type: 'password', className: 'form-control',
+                                placeholder: 'Password', ref: 'password2' })
+                        ),
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'submit', className: 'btn btn-default' },
+                            'Submit'
+                        )
                     )
                 )
             );
@@ -12569,6 +12609,15 @@ var WebcamComponent = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'col-xs-12' },
+                _react2.default.createElement(
+                    'header',
+                    { className: 'page-header text-center' },
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'heading' },
+                        'Go-On!'
+                    )
+                ),
                 _react2.default.createElement(_reactWebcam2.default, { className: 'center-block currentVid', audio: false, ref: 'webcam', screenshotFormat: 'image/png' }),
                 _react2.default.createElement('br', null),
                 _react2.default.createElement(
