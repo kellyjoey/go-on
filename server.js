@@ -41,8 +41,6 @@ cloudinary.config({
   api_secret: 'EH2_iF_FqXGA3e_J1RKQFEOQwtc' 
 });
 
-// Setup logger
-
 
 app.post("/upload", function(req, res){
   let text= "#SomeText";
