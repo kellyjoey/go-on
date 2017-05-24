@@ -7,6 +7,7 @@ import Login from './components/Login'
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Gallery from './components/Gallery';
 import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
 
 class Mobile extends Component {
 
@@ -42,7 +43,7 @@ class Desktop extends Component {
 const Routes = (props) => (
   <Router {...props}>
       <div>
-        <Route exact path="/" component={Navbar} />
+        <Route exact path="/" component={LandingPage} />
         <Route path="/main" component={Desktop} />
         <Route path="/uploads" component={Gallery} />
         <Route path="/register" component={Register} />

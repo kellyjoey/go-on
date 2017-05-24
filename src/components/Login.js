@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 //superagent will make our http requests (it's just an alternative to axios)
 import superagent from 'superagent'
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar';
 
 class Login extends Component {
     render(){
         return(
             <div id="Login" className="container">
+                <Navbar />
             <div className="stage">
                 <div className="layer"></div>
                 <div className="layer"></div>
@@ -24,12 +26,12 @@ class Login extends Component {
                     <form onSubmit={this.doLogin.bind(this)}>
                         <div className="form-group">
                             <label>Username</label>
-                            <input type= "text" className="form-control"
+                            <input type= "text" className="form-control required"
                             placeholder="Username" ref="username" />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control"
+                            <input type="password" className="form-control required"
                             placeholder="Password" ref="password" />
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>

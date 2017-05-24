@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import superagent from 'superagent';
+import Navbar from './Navbar';
 
 class Gallery extends Component {
 
@@ -19,7 +20,6 @@ class Gallery extends Component {
             images: res.body.resources
         })
         console.log(that.state.images);
-        alert("success");
     });
     
         
@@ -28,11 +28,14 @@ class Gallery extends Component {
     render() {
         return (
         
-        <div>
+        <div class="container">
+            <Navbar />
             <header className ="page-header text-center">
                 <h1 className="heading">Go-On!</h1>
             </header>
-           {this.state.images.map(item=><img src={item.url}></img>)}
+            <div id="galleryDiv">
+                {this.state.images.map(item=><img src={item.url} className="galleryImage"></img>)}
+            </div>
         </div>
 
         )

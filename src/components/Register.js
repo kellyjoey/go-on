@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //superagent will make our http requests (it's just an alternative to axios)
 import superagent from 'superagent'
+import Navbar from './Navbar';
 
 class Register extends Component {
 
@@ -14,6 +15,7 @@ class Register extends Component {
     render(){
         return (
           <div id="Register" className="container">
+              <Navbar />
             <header className ="page-header text-center">
                 <h1 className="heading">Go-On!</h1>
             </header>
