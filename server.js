@@ -41,6 +41,7 @@ cloudinary.config({
   api_secret: 'EH2_iF_FqXGA3e_J1RKQFEOQwtc' 
 });
 
+
 // Setup logger
 
 
@@ -136,9 +137,16 @@ app.get('/piclist', function(req, res){
 
 	cloudinary.api.resources(function(result){
 	res.send(result);
+	console.log(cloudinary.api.resources);
 
-},{ type: 'upload' });
+},{ type: 'upload',
+		max_results: 50
+	  });
+		
 });
+
+// cloudinary.api.resources_by_ids(["user_photo_1", "user_photo_2"],
+//   function(result){});
 
 
 

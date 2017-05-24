@@ -39,6 +39,15 @@ body {
 
 .galleryImage {
 	height: 350px;
+	transition: all .12s ease-in-out;
+	margin: 10px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.galleryImage:hover {
+    transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1); /* IE 9 */
+    -webkit-transform: scale(1.1, 1.1);
 }
 
 @font-face {
@@ -177,4 +186,26 @@ body {
 button {
 	outline: none;
 	
+}
+
+.capture {
+	margin-top: 15px;
+}
+
+
+.cancelButton {
+	margin-top: 15px;
+}
+
+.whiteCover {
+
+	z-index: 10000;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
 }

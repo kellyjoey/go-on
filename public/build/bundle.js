@@ -12170,7 +12170,7 @@ var Gallery = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { 'class': 'container' },
+                { className: 'content' },
                 _react2.default.createElement(_Navbar2.default, null),
                 _react2.default.createElement(
                     'header',
@@ -12184,8 +12184,8 @@ var Gallery = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'galleryDiv' },
-                    this.state.images.map(function (item) {
-                        return _react2.default.createElement('img', { src: item.url, className: 'galleryImage' });
+                    this.state.images.map(function (item, index) {
+                        return _react2.default.createElement('img', { src: item.url, key: index, className: 'galleryImage' });
                     })
                 )
             );
@@ -12949,39 +12949,63 @@ var WebcamComponent = function (_Component) {
             this.setState({ screenshot: screenshot });
         }
     }, {
+        key: 'cameraClick',
+        value: function cameraClick() {
+            this.screenshot();
+            $(".currentVid").hide();
+            $(".capture").hide();
+            $("#audio")[0].play();
+            $(".whiteCover").show();
+            $(".whiteCover").fadeOut(400);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'col-xs-12' },
+                { className: 'row' },
+                _react2.default.createElement('div', { className: 'whiteCover' }),
                 _react2.default.createElement(
-                    'header',
-                    { className: 'page-header text-center' },
-                    _react2.default.createElement(
-                        'h1',
-                        { className: 'heading' },
-                        'Go-On!'
-                    )
-                ),
-                _react2.default.createElement(_reactWebcam2.default, { className: 'center-block currentVid', audio: false, ref: 'webcam', screenshotFormat: 'image/png' }),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement(
-                    'button',
-                    { className: 'center-block', onClick: this.screenshot.bind(this) },
-                    'Capture'
-                ),
-                this.state.screenshot ? _react2.default.createElement(
                     'div',
-                    null,
-                    _react2.default.createElement('img', { className: 'center-block currentScreenshot', src: this.state.screenshot }),
-                    ' ',
+                    { className: 'col-xs-12' },
+                    _react2.default.createElement(
+                        'audio',
+                        { id: 'audio' },
+                        _react2.default.createElement('source', { src: 'cameraShutter.mp3', type: 'audio/mpeg' })
+                    ),
+                    _react2.default.createElement(
+                        'header',
+                        { className: 'page-header text-center' },
+                        _react2.default.createElement(
+                            'h1',
+                            { className: 'heading' },
+                            'Go-On!'
+                        )
+                    ),
+                    _react2.default.createElement(_reactWebcam2.default, { className: 'center-block currentVid', audio: false, ref: 'webcam', screenshotFormat: 'image/png' }),
                     _react2.default.createElement(
                         'button',
-                        { className: 'uploadButton center-block', 'data-image': this.state.screenshot },
-                        'Upload!'
+                        { className: 'btn btn-success center-block capture', onClick: this.cameraClick.bind(this) },
+                        'Capture'
                     ),
-                    ' '
-                ) : null
+                    this.state.screenshot ? _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement('img', { className: 'center-block currentScreenshot', src: this.state.screenshot }),
+                        ' ',
+                        _react2.default.createElement(
+                            'button',
+                            { className: 'uploadButton btn btn-success center-block', 'data-image': this.state.screenshot },
+                            'Share'
+                        ),
+                        ' ',
+                        _react2.default.createElement(
+                            'button',
+                            { className: 'cancelButton btn btn-danger center-block', 'data-image': this.state.screenshot },
+                            'Cancel'
+                        )
+                    ) : null
+                )
             );
         }
     }]);
@@ -13100,8 +13124,8 @@ var Desktop = function (_Component2) {
                     { className: 'text-center' },
                     'Desktop'
                 ),
-                _react2.default.createElement(_Images2.default, null),
-                _react2.default.createElement(_Webcam2.default, null)
+                _react2.default.createElement(_Webcam2.default, null),
+                _react2.default.createElement(_Images2.default, null)
             );
         }
     }]);

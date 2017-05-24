@@ -28,13 +28,13 @@ class Gallery extends Component {
     render() {
         return (
         
-        <div class="container">
+        <div className="content">
             <Navbar />
             <header className ="page-header text-center">
                 <h1 className="heading">Go-On!</h1>
             </header>
             <div id="galleryDiv">
-                {this.state.images.map(item=><img src={item.url} className="galleryImage"></img>)}
+                {this.state.images.map((item, index) =><img src={item.url} key ={index} className="galleryImage"></img>)}
             </div>
         </div>
 
