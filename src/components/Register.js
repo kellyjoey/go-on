@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 //superagent will make our http requests (it's just an alternative to axios)
 import superagent from 'superagent'
 import Navbar from './Navbar';
@@ -86,13 +87,15 @@ class Register extends Component {
             'password': this.refs.password.value,
             'password2': this.refs.password2.value 
         })
-
+        
         signupRequest.end((err, resp) => {
             if (err){
                 alert(err, null)
             }
         })
-        } 
+
+    } 
+        window.location.replace("#/login"); //redirects to this React component
     }
 
 }

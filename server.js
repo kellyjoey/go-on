@@ -82,7 +82,7 @@ app.post('/register', (req, res) => {
 			if (err) throw err;
 			console.log(user);
 		});
-res.send("success");
+res.redirect("/#/main");
 	// 	req.flash('success_msg', 'You are registered and can now login');
 
 	// 	res.redirect('/users/login');

@@ -115,12 +115,15 @@ class LandingPage extends Component {
                
                 </div>
 
-                <div className="infoContent">
-                        <h1>some words</h1>
-                        <h1>some words</h1>
-                        <h1>some words</h1>
-                        <h1>some words</h1>
-                        <h1>some words</h1>
+                <div className="infoContent col-md-offset-2 col-md-8">
+                        <h1>Break up your routine. Try something new.  Be creative.</h1>
+                        <h1>Go On is going to encourage you each day to go on and try something
+                             - and then document it and share it with the community. </h1>
+                        <h1>Log in.  See your mission for the day.  Take a pic of your efforts and share!  
+                            Then see others who are trying the same thing.  Have a moment of real life fun and share it online.  
+                            Go on - try it!</h1>
+                        <h1><Link to='/register'>Join In</Link></h1>
+                        <h1><Link to='/login'>Log In</Link></h1>
                         <h1>some words</h1>
                         <h1>some words</h1>
                     </div>

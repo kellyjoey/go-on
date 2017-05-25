@@ -60,6 +60,7 @@ class Login extends Component {
                 alert(err, null)
             }
         })
+        window.location.replace("#/main"); //redirects to this React component
     }
 
     doLogout(event){
