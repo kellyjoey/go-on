@@ -18,10 +18,11 @@ import React, { Component } from 'react'
         $(".capture").hide();
         $("#audio")[0].play();
         $(".whiteCover").show();
-        $(".whiteCover").fadeOut(400);
-        
-        
-        
+        $(".whiteCover").fadeOut(400);    
+     }
+
+     cancel(){
+         window.location.reload('/main');
      }
 
     render() {
@@ -38,7 +39,7 @@ import React, { Component } from 'react'
             </header>
         <Webcam className="center-block currentVid" audio={false} ref="webcam" screenshotFormat="image/png" />
         <button className="btn btn-success center-block capture" onClick={this.cameraClick.bind(this)}>Capture</button>
-        { this.state.screenshot ? <div><img className="center-block currentScreenshot" src={this.state.screenshot} /> <button className="uploadButton btn btn-success center-block" data-image={this.state.screenshot}>Share</button> <button className="cancelButton btn btn-danger center-block" data-image={this.state.screenshot}>Cancel</button></div>: null }
+        { this.state.screenshot ? <div><img className="center-block currentScreenshot" src={this.state.screenshot} /> <button className="uploadButton btn btn-success center-block" data-image={this.state.screenshot}>Share</button> <button onClick={this.cancel.bind(this)} className="cancelButton btn btn-danger center-block" data-image={this.state.screenshot}>Cancel</button></div>: null }
         
         </div>
         </div>

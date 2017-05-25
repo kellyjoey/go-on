@@ -65,7 +65,7 @@ class Images extends Component {
             })
 
         })
-
+        window.location.replace("#/uploads"); //redirects to this React component
     }
 
     removeImage(event){

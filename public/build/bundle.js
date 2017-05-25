@@ -12302,6 +12302,7 @@ var Images = function (_Component) {
                     images: updatedImages
                 });
             });
+            window.location.replace("#/uploads"); //redirects to this React component
         }
     }, {
         key: 'removeImage',
@@ -12973,6 +12974,11 @@ var WebcamComponent = function (_Component) {
             $(".whiteCover").fadeOut(400);
         }
     }, {
+        key: 'cancel',
+        value: function cancel() {
+            window.location.reload('/main');
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -13015,7 +13021,7 @@ var WebcamComponent = function (_Component) {
                         ' ',
                         _react2.default.createElement(
                             'button',
-                            { className: 'cancelButton btn btn-danger center-block', 'data-image': this.state.screenshot },
+                            { onClick: this.cancel.bind(this), className: 'cancelButton btn btn-danger center-block', 'data-image': this.state.screenshot },
                             'Cancel'
                         )
                     ) : null
