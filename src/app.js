@@ -15,8 +15,10 @@ class Mobile extends Component {
         return (
             <div>
                 <h1>Mobile</h1>
-                <form method="POST" action="/upload">
-                    <input type="file" name='pic' capture="capture" accept="image/*" />
+                <Images />
+                <form method="POST" action="/upload">        
+                    <input type="file" name='pic'  accept="image/*" capture="camera" />
+                 
                 </form>
                 <Register />
                 <Login />
@@ -47,6 +49,7 @@ const Routes = (props) => (
         <Route path="/uploads" component={Gallery} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
+        {/*<Route path="/mobile" component={Mobile} />*/}
     </div>
   </Router>  
       
@@ -57,3 +60,9 @@ ReactDOM.render(
   <Routes />,
   document.getElementById('root')
 );
+
+// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//      ReactDOM.render(<Mobile />, document.getElementById('root'))
+//  }else{
+//      ReactDOM.render(<Desktop />, document.getElementById('root'))
+//  } 

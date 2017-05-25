@@ -4,8 +4,7 @@ const bcrypt = require('bcrypt');
 // define the User model schema
 const UserSchema = new mongoose.Schema({
   email: {
-    type: String,
-    index: { unique: true }
+    type: String
   },
   password: {
       type: String
@@ -42,5 +41,14 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
   bcrypt.compare(candidatePassword, hash, function(err, isMatch){
     if (err) throw err;
     callback(null, isMatch);
+  });
+}
+
+module.exports.checkEmailExist = function(email, callback) {
+  var query = { email: email };
+  User.findOne(query, function(err, isMatch){
+    if (isMatch){
+      return("Email already registered");
+    }
   });
 }

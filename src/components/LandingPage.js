@@ -124,6 +124,7 @@ class LandingPage extends Component {
                         <h1>some words</h1>
                         <h1>some words</h1>
                     </div>
+            
                 </div>
            
         )

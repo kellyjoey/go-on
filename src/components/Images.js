@@ -29,7 +29,7 @@ class Images extends Component {
         //cloudinary wants a timestamp in seconds hence the dividing by 1000
         const timestamp = Date.now()/1000
         //uploadPreset found in your settings in Cloudinary
-        const uploadPreset = 'hc3jswxd'
+        const uploadPreset = 'dvyocx63'
         //create a parameter string
         const paramsStr = 'timestamp' + timestamp + '&upload_preset=' + uploadPreset + 'EH2_iF_FqXGA3e_J1RKQFEOQwtc'
        

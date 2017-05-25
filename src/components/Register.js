@@ -35,22 +35,22 @@ class Register extends Component {
                 <div className="form-group">
                     <label>Username</label>
                     <input type="text" className="form-control"
-                    placeholder="Username" ref="username" />
+                    placeholder="Username" ref="username" required />
                 </div>
                 <div className="form-group">
                     <label>Email</label>
                     <input type="email" className="form-control"
-                    placeholder="Email" ref="email" />
+                    placeholder="Email" ref="email" required />
                 </div>
                 <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control"
-                    placeholder="Password" ref="password" />
+                    placeholder="Password" ref="password" required />
                 </div>
                 <div className="form-group">
                     <label>Confirm Password</label>
                     <input type="password" className="form-control"
-                    placeholder="Password" ref="password2" />
+                    placeholder="Password" ref="password2" required />
                 </div>
                 <button type="submit" className="btn btn-default">Submit</button>
                 </form>
@@ -63,12 +63,14 @@ class Register extends Component {
         event.preventDefault();
         //grabbing the submitted data
         console.log(this.refs.name.value);
-        // const params = {
-        //     'name': this.refs.name.value,
-        //     'username': this.refs.username.value,
-        //     'email': this.refs.email.value,
-        //     'password': this.refs.password.value,
-        // }
+
+        let password = this.refs.password.value
+        let password2 = this.refs.password2.value
+        
+        
+        if (password !== password2 ){
+            alert("Passwords must match")
+        } else { 
         //clear out the input boxes
         // this.refs.name.value = '';
 
@@ -90,7 +92,7 @@ class Register extends Component {
                 alert(err, null)
             }
         })
-        
+        } 
     }
 
 }

@@ -12,7 +12,7 @@ class Navbar extends Component {
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span className="sr-only">Toggle navigation</span> Menu <i className="fa fa-bars"></i>
                 </button>
-                <a className="navbar-brand page-scroll" href="#page-top">Go On</a>
+                <a className="navbar-brand page-scroll" href="/">Go On</a>
             </div>
 
             {/*<!-- Collect the nav links, forms, and other content for toggling -->*/}
@@ -22,7 +22,7 @@ class Navbar extends Component {
                         <Link to="/login">Login</Link>
                     </li>
                     <li>
-                        <Link to ="/register">Register</Link>
+                        <Link to ="/register">Join In</Link>
                     </li>
                     <li>
                         <Link to="/uploads">Gallery</Link>

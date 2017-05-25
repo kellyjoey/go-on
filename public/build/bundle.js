@@ -3108,7 +3108,7 @@ var Navbar = function (_Component) {
                             ),
                             _react2.default.createElement(
                                 'a',
-                                { className: 'navbar-brand page-scroll', href: '#page-top' },
+                                { className: 'navbar-brand page-scroll', href: '/' },
                                 'Go On'
                             )
                         ),
@@ -3133,7 +3133,7 @@ var Navbar = function (_Component) {
                                     _react2.default.createElement(
                                         _reactRouterDom.Link,
                                         { to: '/register' },
-                                        'Register'
+                                        'Join In'
                                     )
                                 ),
                                 _react2.default.createElement(
@@ -12267,7 +12267,7 @@ var Images = function (_Component) {
             //cloudinary wants a timestamp in seconds hence the dividing by 1000
             var timestamp = Date.now() / 1000;
             //uploadPreset found in your settings in Cloudinary
-            var uploadPreset = 'hc3jswxd';
+            var uploadPreset = 'dvyocx63';
             //create a parameter string
             var paramsStr = 'timestamp' + timestamp + '&upload_preset=' + uploadPreset + 'EH2_iF_FqXGA3e_J1RKQFEOQwtc';
 
@@ -12816,7 +12816,7 @@ var Register = function (_Component) {
                                 'Username'
                             ),
                             _react2.default.createElement('input', { type: 'text', className: 'form-control',
-                                placeholder: 'Username', ref: 'username' })
+                                placeholder: 'Username', ref: 'username', required: true })
                         ),
                         _react2.default.createElement(
                             'div',
@@ -12827,7 +12827,7 @@ var Register = function (_Component) {
                                 'Email'
                             ),
                             _react2.default.createElement('input', { type: 'email', className: 'form-control',
-                                placeholder: 'Email', ref: 'email' })
+                                placeholder: 'Email', ref: 'email', required: true })
                         ),
                         _react2.default.createElement(
                             'div',
@@ -12838,7 +12838,7 @@ var Register = function (_Component) {
                                 'Password'
                             ),
                             _react2.default.createElement('input', { type: 'password', className: 'form-control',
-                                placeholder: 'Password', ref: 'password' })
+                                placeholder: 'Password', ref: 'password', required: true })
                         ),
                         _react2.default.createElement(
                             'div',
@@ -12849,7 +12849,7 @@ var Register = function (_Component) {
                                 'Confirm Password'
                             ),
                             _react2.default.createElement('input', { type: 'password', className: 'form-control',
-                                placeholder: 'Password', ref: 'password2' })
+                                placeholder: 'Password', ref: 'password2', required: true })
                         ),
                         _react2.default.createElement(
                             'button',
@@ -12866,33 +12866,35 @@ var Register = function (_Component) {
             event.preventDefault();
             //grabbing the submitted data
             console.log(this.refs.name.value);
-            // const params = {
-            //     'name': this.refs.name.value,
-            //     'username': this.refs.username.value,
-            //     'email': this.refs.email.value,
-            //     'password': this.refs.password.value,
-            // }
-            //clear out the input boxes
-            // this.refs.name.value = '';
 
-            //prepare request for superagent
-            var signupRequest = _superagent2.default.post('/register');
-            // console.log("signupRequest:")
-            // console.log(signupRequest)
+            var password = this.refs.password.value;
+            var password2 = this.refs.password2.value;
 
-            signupRequest.send({
-                'name': this.refs.name.value,
-                'username': this.refs.username.value,
-                'email': this.refs.email.value,
-                'password': this.refs.password.value,
-                'password2': this.refs.password2.value
-            });
+            if (password !== password2) {
+                alert("Passwords must match");
+            } else {
+                //clear out the input boxes
+                // this.refs.name.value = '';
 
-            signupRequest.end(function (err, resp) {
-                if (err) {
-                    alert(err, null);
-                }
-            });
+                //prepare request for superagent
+                var signupRequest = _superagent2.default.post('/register');
+                // console.log("signupRequest:")
+                // console.log(signupRequest)
+
+                signupRequest.send({
+                    'name': this.refs.name.value,
+                    'username': this.refs.username.value,
+                    'email': this.refs.email.value,
+                    'password': this.refs.password.value,
+                    'password2': this.refs.password2.value
+                });
+
+                signupRequest.end(function (err, resp) {
+                    if (err) {
+                        alert(err, null);
+                    }
+                });
+            }
         }
     }]);
 
@@ -13090,10 +13092,11 @@ var Mobile = function (_Component) {
                     null,
                     'Mobile'
                 ),
+                _react2.default.createElement(_Images2.default, null),
                 _react2.default.createElement(
                     'form',
                     { method: 'POST', action: '/upload' },
-                    _react2.default.createElement('input', { type: 'file', name: 'pic', capture: 'capture', accept: 'image/*' })
+                    _react2.default.createElement('input', { type: 'file', name: 'pic', accept: 'image/*', capture: 'camera' })
                 ),
                 _react2.default.createElement(_Register2.default, null),
                 _react2.default.createElement(_Login2.default, null)
@@ -13150,6 +13153,12 @@ var Routes = function Routes(props) {
 };
 
 _reactDom2.default.render(_react2.default.createElement(Routes, null), document.getElementById('root'));
+
+// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//      ReactDOM.render(<Mobile />, document.getElementById('root'))
+//  }else{
+//      ReactDOM.render(<Desktop />, document.getElementById('root'))
+//  }
 
 /***/ }),
 /* 106 */

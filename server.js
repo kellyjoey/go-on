@@ -47,7 +47,7 @@ cloudinary.config({
 
 app.post("/upload", function(req, res){
   
-	console.log("req.body" + req.body)
+	let text= "#SomeText";
   cloudinary.v2.uploader.upload(req.body.image, {transformation: [
   {width: 400, crop: "scale"},
   {overlay: "text:helvetica_15_bold:"+ text +"", gravity: "south_east",x: 12, y: 12, color: "#fff", opacity: 80}
@@ -65,8 +65,11 @@ app.post('/register', (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
 	let password2 = req.body.password2;
-  // console.log("this is your request req.body");
-	// console.log(req.body);
+
+	User.checkEmailExist(email, function (err, user){
+		if(err) throw err;
+		console.log(user);
+	});
 
 		var newUser = new User({
 			name: name,
