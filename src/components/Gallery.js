@@ -31,10 +31,10 @@ class Gallery extends Component {
         <div className="content">
             <Navbar />
             <header className ="page-header text-center">
-                <h1 className="heading">Go-On!</h1>
+                <h1 className="heading">Go-On!</h1>               
             </header>
             <div id="galleryDiv">
-                {this.state.images.map((item, index) =><img src={item.url} key ={index} className="galleryImage"></img>)}
+                {this.state.images.map((item, index) =><div className="imgDiv"><img src={item.url} key ={index} className="galleryImage"></img></div>)}
             </div>
         </div>
 

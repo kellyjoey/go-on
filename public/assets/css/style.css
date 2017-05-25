@@ -20,15 +20,14 @@ body {
     font-size: 125px;
 }
 
-/*video {
+.currentVid {
     width: 620px;
     border: 30px solid white;
     box-shadow: 10px 10px 20px rgba(0,0,0,.5);
     border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" ><defs><linearGradient id="lgrad" x1="0%" y1="100%" x2="100%" y2="0%" ><stop offset="0%" style="stop-color:rgb(255,0,255);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(0,255,255);stop-opacity:1" /></linearGradient> </defs><rect x="0" y="0" width="100%" height="100%" fill="url(#lgrad)"/></svg>') 10% stretch;
-    padding: 0;
-    margin: 0;
+   
     
-}*/
+}
 
 #galleryDiv {
 	display: flex;
@@ -39,12 +38,16 @@ body {
 
 .galleryImage {
 	height: 350px;
-	transition: all .12s ease-in-out;
+	
 	margin: 10px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
-.galleryImage:hover {
+.imgDiv {
+transition: all .12s ease-in-out;
+}
+
+.imgDiv:hover {
     transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1); /* IE 9 */
     -webkit-transform: scale(1.1, 1.1);
@@ -178,7 +181,7 @@ body {
 }
 
 .arrow:hover {
-	color: purple;
+	color: white;
 	 transform: scale(1.3);
 }
 
@@ -209,3 +212,44 @@ button {
 	width: 100%;
 	display: none;
 }
+
+
+.imgDiv {
+	position: relative;
+
+}
+
+.heartClick {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: palevioletred;
+	font-size: 30px;
+}
+
+.infoContent {
+	background: white;
+	border: solid black;
+	margin-top: 800px;
+	margin-bottom: 800px;
+	padding: 40px;
+}
+
+.mission {
+	font-size: 60px;
+	font-family: VivaBeautiful;
+
+   animation-duration: 350ms;
+   animation-name: blink;
+   animation-iteration-count: 6;
+   animation-direction: alternate;
+}
+@keyframes blink {
+   from {
+      color : black;
+   }
+   to {
+      color: gold;
+   }
+}
+

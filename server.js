@@ -47,7 +47,7 @@ cloudinary.config({
 
 app.post("/upload", function(req, res){
   
-	let text= "#SomeText";
+	let text= "#PeaceOut";
   cloudinary.v2.uploader.upload(req.body.image, {transformation: [
   {width: 400, crop: "scale"},
   {overlay: "text:helvetica_15_bold:"+ text +"", gravity: "south_east",x: 12, y: 12, color: "#fff", opacity: 80}

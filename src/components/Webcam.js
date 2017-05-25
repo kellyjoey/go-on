@@ -36,6 +36,7 @@ import React, { Component } from 'react'
         </audio>
         <header className ="page-header text-center">
                 <h1 className="heading">Go-On!</h1>
+                 <h1 className="mission">Your mission: Throw up a peace sign!</h1>
             </header>
         <Webcam className="center-block currentVid" audio={false} ref="webcam" screenshotFormat="image/png" />
         <button className="btn btn-success center-block capture" onClick={this.cameraClick.bind(this)}>Capture</button>

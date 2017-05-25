@@ -12185,7 +12185,11 @@ var Gallery = function (_Component) {
                     'div',
                     { id: 'galleryDiv' },
                     this.state.images.map(function (item, index) {
-                        return _react2.default.createElement('img', { src: item.url, key: index, className: 'galleryImage' });
+                        return _react2.default.createElement(
+                            'div',
+                            { className: 'imgDiv' },
+                            _react2.default.createElement('img', { src: item.url, key: index, className: 'galleryImage' })
+                        );
                     })
                 )
             );
@@ -12542,32 +12546,26 @@ var LandingPage = function (_Component) {
                         'Log in.  See your mission for the day.  Take a pic of your efforts and share! Then see others who are trying the same thing.  Have a moment of real life fun and share it online. Go on - try it!'
                     ),
                     _react2.default.createElement(
-                        'h1',
-                        null,
+                        'div',
+                        { className: 'text-center' },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/register' },
-                            'Join In'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'h1',
-                        null,
+                            'h1',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouterDom.Link,
+                                { to: '/register' },
+                                'Join In'
+                            )
+                        ),
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/login' },
-                            'Log In'
+                            'h1',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouterDom.Link,
+                                { to: '/login' },
+                                'Log In'
+                            )
                         )
-                    ),
-                    _react2.default.createElement(
-                        'h1',
-                        null,
-                        'some words'
-                    ),
-                    _react2.default.createElement(
-                        'h1',
-                        null,
-                        'some words'
                     )
                 )
             );
@@ -13000,6 +12998,11 @@ var WebcamComponent = function (_Component) {
                             'h1',
                             { className: 'heading' },
                             'Go-On!'
+                        ),
+                        _react2.default.createElement(
+                            'h1',
+                            { className: 'mission' },
+                            'Your mission: Throw up a peace sign!'
                         )
                     ),
                     _react2.default.createElement(_reactWebcam2.default, { className: 'center-block currentVid', audio: false, ref: 'webcam', screenshotFormat: 'image/png' }),
@@ -13140,11 +13143,6 @@ var Desktop = function (_Component2) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    'h1',
-                    { className: 'text-center' },
-                    'Desktop'
-                ),
                 _react2.default.createElement(_Webcam2.default, null),
                 _react2.default.createElement(_Images2.default, null)
             );
